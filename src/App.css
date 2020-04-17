@@ -1,0 +1,16 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+.App {
+  text-align: center;
+  height: 100%;
+  margin: 0 0 0 0;
+  background: linear-gradient(to right, rgb(248, 247, 250), rgb(216, 213, 223)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
