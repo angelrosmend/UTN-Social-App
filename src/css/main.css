@@ -85,6 +85,76 @@
 }
 
 /*////////////////////////////
+/////////PAGE PROJECTS////////
+////////////////////////////*/
+
+.container-projects{
+    margin:auto;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.container-projects h3{
+    color: #e41f39;
+    font-weight: bold;
+}
+.container-projects h6{
+    color: rgba(255, 255, 255, 0.904);
+    font-weight: bold;
+    font-size: 23px;
+}
+.modulo-1, .modulo-2{
+    flex: 1;
+}
+.projects-list{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    overflow: auto;
+    scrollbar-color: #bc2035d7 rgba(36, 29, 29, 0.062);
+    margin: auto;
+    height: 100%;
+}
+
+.md-1, .md-2{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.container-projects hr{
+    border-top: 3px solid #fff;
+    width: 80%;
+    margin: auto;
+}
+.container-projects p{
+    color: white;
+    font-size: 25px;
+    padding: 1.2em;
+}
+
+.projects-list i{
+    color: #bc2036;
+    font-size: 4.5em;
+}
+.projects-list i:hover{
+    color: #e41f39;
+}
+.projects-list p{
+    text-align: center;
+    color: rgba(255, 255, 255, 0.856);
+    font-size: 17px;
+    font-weight: bold;
+}
+.projects-list a{
+    text-decoration: none;
+}
+
+
+/*////////////////////////////
 //PAGE COMPAÑEROS////////
 ////////////////////////////*/
 .loading{
