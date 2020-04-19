@@ -13,7 +13,7 @@ function Home() {
     <div className="container-home">
         <Route component={Navigation}/>
         <Route path="/user" component={ProfileUser}/>
-        <Route path="/friend" component={ProfileFriend}/>
+        <Route path="/friend/:id" component={ProfileFriend}/>
         <Route path="/inicio" component={SignUp}/>
         <Route component={Footer}/>
 

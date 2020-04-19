@@ -8,7 +8,9 @@ class Add extends Component {
         super(props)
     
         this.state = {
-             added: props.added
+             added: props.added,
+             id: props.id,
+             name: props.nombre
         }
         this.handleClick = this.handleClick.bind(this);
     }
@@ -22,11 +24,11 @@ class Add extends Component {
         const buttonText = this.state.added ? 'Remover Amigo': 'Agregar Amigo';
         const stateText = this.state.added ? 'Es mi amigo' : '';
         const viewProfile = this.state.added ? 'Ver perfil' : '';
+        const nombre = this.state.name;
         return (
         <Fragment>
          <div className="state">
-            <p>{stateText}</p>
-            <Link to={`/friend/`}>{viewProfile}</Link>
+        <p>{stateText}{nombre}</p>
          </div>
          <div className="btn">
             <button type="button" onClick={this.handleClick}>{buttonText}</button>
