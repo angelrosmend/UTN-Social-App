@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
 import '../css/Inicio.css'
-import { Link } from 'react-router-dom';
+import { Link, } from 'react-router-dom';
 
 class LogIn extends Component {
     constructor(props) {
         super(props);
-        console.log(this.props.title)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
+        /*this.handleClick = this.handleClick.bind(this)*/
         this.state = {
         usuario:'',
-        password:''
+        password:'',
         };
     }
    
@@ -18,6 +18,13 @@ class LogIn extends Component {
         e.preventDefault(); 
         console.log(this.state);
     }
+   /* handleClick(e){
+    if(this.state.usuario === "user" && this.state.password ==="1234"){
+        BrowserHistory.push("/home/user/profile")
+        } else {
+            alert("datos incorrectos")
+        }
+    }*/
 
     handleChange(e){
         const target = e.target;
@@ -40,11 +47,27 @@ class LogIn extends Component {
      <div className="form">
      <form onSubmit={this.handleSubmit}>  
          <div className="input-group" > 
-             <input type="text" name="usuario" placeholder="Usuario" value={this.state.usuario} onChange={this.handleChange}/>
-             <input type="password" name="password" placeholder="Contraseña" value={this.state.password} onChange={this.handleChange}/>
+             <input 
+             type="text" 
+             name="usuario" 
+             placeholder="Usuario" 
+             value={this.state.usuario} 
+             onChange={this.handleChange}/>
+
+             <input 
+             type="password" 
+             name="password" 
+             placeholder="Contraseña" 
+             value={this.state.password} 
+             onChange={this.handleChange}/>
          </div>
          <div className="boton">
-                 <button type="submit" className="submit-btn"><Link to={'/home/user/profile'}>ACCEDER </Link></button>
+                 <button 
+                 type="submit" 
+                 className="submit-btn"
+                 onClick={this.handleClick}>
+                     <Link className="link" to="/home/user/profile">INGRESAR</Link>
+                 </button>
          </div>
      </form>
 

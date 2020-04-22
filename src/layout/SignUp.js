@@ -18,8 +18,7 @@ class SignUp extends Component {
 
  handleSubmit(e) {
      console.log(this.state);
-     e.preventDefault(); 
-     alert("Su usuario es user y su contraseña es 1234")
+     e.preventDefault();
  }
 
  handleChange(e){

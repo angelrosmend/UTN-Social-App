@@ -11,18 +11,19 @@
 /*////////////////////////////
 ////////NAVIGATION////////////
 ////////////////////////////*/
-header{
+.header-inicio{
  position: fixed;
- top:0;
+ top: 0;
  display: flex;
  width: 100%;
  height: 10vh;
  margin: auto;
+ align-items: center;
  background-color: rgb(255, 255, 255);
  box-shadow: 0 5px 2px -2px rgba(0,0,0,.2);
 }
 
-.logo, .nav-links, .log-out{
+.logo, .nav-links-inicio{
  display: flex;
 }
 
@@ -35,17 +36,18 @@ header{
  height: 50px;
 }
 
-nav{
+.nav-inicio{
  flex: 1;
  display: flex;
  flex-direction: row;
  justify-content: flex-end;
 }
 
-.nav-links{
+.nav-links-inicio{
  width: 50%;
  display: flex;
-list-style: none;
+ justify-content: space-around;
+ list-style: none;
 }
 
 .nav-link{
@@ -123,6 +125,11 @@ input:focus{
  font-size: 1rem;
  font-weight: bold;
  cursor: pointer;
+}
+.link{
+ color: #fff;
+ text-decoration: none;
+ font-weight: bold;
 }
 
 .boton button:hover{

@@ -13,7 +13,6 @@ function Home() {
     <div className="container-home">
         <Route component={NavigationUser}/>
         <Route path="/home/user" component={ProfileUser}/>
-    
         <Route path="/home/friend/:id" component={ProfileFriend}/>
         <Route path="/inicio" component={SignUp}/>
         <Route component={Footer}/>

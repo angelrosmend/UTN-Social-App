@@ -14,25 +14,25 @@ function Projects() {
         href="/"
         rel="noopener noreferrer"
         target="_blank">
-            <i className="fa fa-linkedin-square" aria-hidden="true" />
+            <i className="fas fa-file-code" aria-hidden="true" />
             <p className="unidades">Unidad 1: Web layout</p>
     </a>
     <a href="/"
         rel="noopener noreferrer"
         target="_blank">
-            <i className="fa fa-github-square" aria-hidden="true" />
+            <i className="fas fa-calculator" aria-hidden="true" />
             <p className="unidades">Unidad 2: ES6 Calculadora</p>
     </a>
     <a href="/"
         rel="noopener noreferrer"
         target="_blank">
-            <i className="fa fa-youtube-square" aria-hidden="true" />
+            <i className="fab fa-react" aria-hidden="true" />
             <p className="unidades">Unidad 3: App React</p>
     </a>
     <a href="/"
         rel="noopener noreferrer"
         target="_blank">
-            <i className="fa fa-facebook-square" aria-hidden="true" />
+            <i className="fas fa-address-card" aria-hidden="true" />
             <p className="unidades">Unidad 4: Perfil Usuario</p>
     </a>
     </div>
@@ -45,25 +45,25 @@ function Projects() {
     <a href="/"
         rel="noopener noreferrer"
         target="_blank">
-            <i className="fa fa-linkedin-square" aria-hidden="true" />
+            <i className="fas fa-user-friends" aria-hidden="true" />
             <p className="unidades">Unidad 1: Botton Agregar</p>
     </a>
     <a href="/"
         rel="noopener noreferrer"
         target="_blank">
-            <i className="fa fa-github-square" aria-hidden="true" />
+            <i className="fas fa-list" aria-hidden="true" />
             <p className="unidades">Unidad 2: API rest</p>
     </a>
     <a href="/"
         rel="noopener noreferrer"
         target="_blank">
-            <i className="fa fa-youtube-square" aria-hidden="true" />
+            <i className="fas fa-exchange-alt" aria-hidden="true" />
             <p className="unidades">Unidad 3: React Router</p>
     </a>
     <a href="/"
         rel="noopener noreferrer"
         target="_blank">
-            <i className="fa fa-facebook-square" aria-hidden="true" />
+            <i className="fas fa-dragon" aria-hidden="true" />
             <p className="unidades">Unidad 4: Eventos</p>
     </a>
     </div>
