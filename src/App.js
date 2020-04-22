@@ -1,19 +1,18 @@
 import React from 'react';
 import './App.css';
 import Home from './layout/Home'
-import { BrowserRouter, Route, Redirect,Switch,} from 'react-router-dom';
-import Navigation from './layout/Navigation'
-import Footer from './layout/Footer'
+import Inicio from './layout/Inicio'
+import {Route, Redirect,} from 'react-router-dom';
+
 
 
 function App() {
   return (
-    <BrowserRouter>
     <div className="App">
-     <Route path="/" component={Home}/>
-     <Redirect from={'/'} to={'/user/profile'} />
-   </div>
-   </BrowserRouter>
+     <Route path="/inicio" component={Inicio}/>
+     <Route path="/home" component={Home}/>
+     <Redirect from={'/'} to={'/inicio/signup'} />
+     </div>
   );
 }
 

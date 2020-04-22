@@ -16,9 +16,9 @@ function ProfileUser() {
  </div>
  <div className="container-nav-page">
    <Switch>
-   <Route path="/user/profile" component={About}/>
-   <Route exact path="/user/projects" component={Projects}/>
-   <Route exact path="/user/friends" component={Friends}/>
+   <Route path="/home/user/profile" component={About}/>
+   <Route path="/home/user/projects" component={Projects}/>
+   <Route path="/home/user/friends" component={Friends}/>
    </Switch>
  </div>
  </Fragment>

@@ -1,9 +1,40 @@
 import React, { Component } from 'react'
-import '../css/LogIn.css'
+import '../css/Inicio.css'
 
 
-export class SignUp extends Component {
+class SignUp extends Component {
+ constructor(props) {
+     super(props);
+     console.log(this.props.title)
+     this.handleSubmit = this.handleSubmit.bind(this)
+     this.handleChange = this.handleChange.bind(this)
+     this.state={
+         nombre:'',
+         apellido: '',
+         email: '',
+         password:''
+     }
+ }
+
+ handleSubmit(e) {
+     console.log(this.state);
+     e.preventDefault(); 
+     alert("Su usuario es user y su contraseña es 1234")
+ }
+
+ handleChange(e){
+     const target = e.target;
+     const value = target.value;
+     const name = target.name;
+
+     this.setState({
+         [name]:value
+     })
+     e.preventDefault();
+ }
+ 
  render() {
+
   return (
    <div className="container-sign-up">
      <div className="header-titulo">
@@ -11,29 +42,22 @@ export class SignUp extends Component {
          <hr />
      </div>
      <div className="form">
-     <form>
+     <form onSubmit={this.handleSubmit}>
          <div className="input-group" > 
-             <input type="text" name="nombre"   placeholder="Nombre" />
-             <input type="text" name="apellido" placeholder="Apellido" />
+             <input type="text" name="nombre"   placeholder="Nombre"  value={this.state.nombre} onChange={this.handleChange}/>
+             <input type="text" name="apellido" placeholder="Apellido" value={this.state.apellido} onChange={this.handleChange}/>
          </div>
          <div className="input-group">
-         <input type="text" name="email" placeholder="Email" />
-         <input type="phone" name="Telefono" placeholder="Telefono" />
+         <input type="text" name="email" placeholder="Email" value={this.state.email} onChange={this.handleChange}/>
+         <input type="password" name="password" placeholder="Contraseña" value={this.state.password} onChange={this.handleChange}/>
          </div>
-         <div class="input-group">
-             <input type="password" name="password" placeholder="Contraseña" />
-             <input type="password" name="password" placeholder="Confirmar contraseña" />
-         </div>
-         <div className="boton">
-                 <button type="submit" class="submit-btn ">REGISTRARSE</button>
-         </div>
-         
-        
-     </form>
 
-     </div>
-     
- </div>
+         <div className="boton">
+                 <button type="submit" className="submit-btn">REGISTRARSE</button>
+         </div>
+     </form>
+    </div>
+   </div>
   )
  }
 }

@@ -1,6 +1,5 @@
 import React,{useState, useEffect} from 'react';
 import '../css/main.css'
-import avatar from '../img/avatar.png'
 
 
 function ProfileFriend({ match }) {

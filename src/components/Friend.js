@@ -11,7 +11,7 @@ function Friend({data}) {
             <img src={data.avatar}/>
         </div>
         <div className="friend-info">
-        <Link className="link-friend-profile" to={`/friend/${data.id}`}>
+        <Link className="link-friend-profile" to={`/home/friend/${data.id}`}>
             <h5>{data.nombre}</h5>
             </Link>
             <p>{data.ciudad}</p>
