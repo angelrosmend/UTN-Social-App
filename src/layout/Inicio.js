@@ -9,10 +9,10 @@ import '../css/Inicio.css'
 function Inicio() {
  return (
   <div className="container-inicio">
-        <Route component={NavigationStart}/>
-        <Route path="/inicio/signup" component={SignUp}/>
-        <Route path="/inicio/login" component={LogIn}/>
-        <Route component={Footer}/>
+      <Route component={NavigationStart}/>
+      <Route path="/inicio/signup" component={SignUp}/>
+      <Route path="/inicio/login" component={LogIn}/>
+      <Route component={Footer}/>
 
   </div>
  )

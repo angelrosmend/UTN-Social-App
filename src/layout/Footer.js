@@ -3,9 +3,9 @@ import '../css/main.css'
 
 function Footer() {
 return (
-        <footer className="footer"> 
-        <p> &copy; 2020 </p>
-        </footer>
+  <footer className="footer"> 
+     <p> UTN &copy; 2020 </p>
+  </footer>
 )
 }
 
