@@ -1,30 +1,40 @@
 import React, { Component } from 'react'
+import firebase from '../config/firebase'
+import { withRouter } from 'react-router-dom';
 import '../css/Inicio.css'
 import { Link, } from 'react-router-dom';
 
 class LogIn extends Component {
     constructor(props) {
         super(props);
+
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
         /*this.handleClick = this.handleClick.bind(this)*/
         this.state = {
-        usuario:'',
-        password:'',
-        };
+        email:'',
+        password:''
+        }
     }
    
     handleSubmit(e) {
         e.preventDefault(); 
         console.log(this.state);
+        let email = this.state.usuario;
+        let password = this.state.password;
+
+        firebase.auth.signInWithEmailAndPassword(email, password)
+        .then(() => {
+            console.log("Login")
+            const { history } = this.props;
+            history.push('/home/user/profile')
+        })
+        .catch(error => {
+            console.log("Error", error)
+        });
+        e.preventDefault();
     }
-   /* handleClick(e){
-    if(this.state.usuario === "user" && this.state.password ==="1234"){
-        BrowserHistory.push("/home/user/profile")
-        } else {
-            alert("datos incorrectos")
-        }
-    }*/
+
 
     handleChange(e){
         const target = e.target;
@@ -64,18 +74,17 @@ class LogIn extends Component {
          <div className="boton">
                  <button 
                  type="submit" 
-                 className="submit-btn"
-                 onClick={this.handleClick}>
-                     <Link className="link" to="/home/user/profile">INGRESAR</Link>
+                 className="submit-btn">
+                    {/* <Link className="link" to="/home/user/profile">INGRESAR</Link>*/}
+                    ACCEDER
                  </button>
          </div>
      </form>
 
      </div>
-     
  </div>
   )
  }
 }
 
-export default LogIn
+export default withRouter(LogIn)

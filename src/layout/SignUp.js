@@ -1,39 +1,63 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect, Component } from 'react'
+import { useHistory } from "react-router-dom"
 import '../css/Inicio.css'
+import firebase from '../config/firebase'
 
 
-class SignUp extends Component {
- constructor(props) {
-     super(props);
-     console.log(this.props.title)
-     this.handleSubmit = this.handleSubmit.bind(this)
-     this.handleChange = this.handleChange.bind(this)
-     this.state={
-         nombre:'',
-         apellido: '',
-         email: '',
-         password:''
-     }
+function SignUp() {
+  const history = useHistory();
+
+  function handleClick(){
+      history.push("/inicio/signup")
+  }
+
+  const [form, setForm] = useState({
+    nombre: '',
+    apellido: '',
+    email: '',
+    password: ''
+})
+
+function handleSubmit(e) {
+
+     let email = form.email;
+     let password = form.password;
+     firebase.auth.createUserWithEmailAndPassword(email, password)
+     .then((data) =>{
+         console.log("Usuario creado", data.user.uid)
+         firebase.db.collection("usuarios").add({
+             nombre: form.nombre,
+             apellido: form.apellido,
+             email: form.email,
+             userId: data.user.uid
+         })
+         .then((data)=>{
+             console.log(data)
+             history.push("/inicio/login")
+         })  
+         .catch((err)=>{
+            console.log(err)
+        })
+    })
+    .catch((error) => {
+        console.log("Error", error)
+    })
+    e.preventDefault();
  }
 
- handleSubmit(e) {
-     console.log(this.state);
-     e.preventDefault();
- }
-
- handleChange(e){
+ function handleChange(e){
      const target = e.target;
      const value = target.value;
      const name = target.name;
 
-     this.setState({
+     setForm({
+         ...form,
          [name]:value
-     })
+     });
      e.preventDefault();
  }
- 
- render() {
 
+ 
   return (
    <div className="container-sign-up">
      <div className="header-titulo">
@@ -41,24 +65,23 @@ class SignUp extends Component {
          <hr />
      </div>
      <div className="form">
-     <form onSubmit={this.handleSubmit}>
+     <form onSubmit={handleSubmit}>
          <div className="input-group" > 
-             <input type="text" name="nombre"   placeholder="Nombre"  value={this.state.nombre} onChange={this.handleChange}/>
-             <input type="text" name="apellido" placeholder="Apellido" value={this.state.apellido} onChange={this.handleChange}/>
+             <input type="text" name="nombre"   placeholder="Nombre"  value={form.nombre} onChange={handleChange}/>
+             <input type="text" name="apellido" placeholder="Apellido" value={form.apellido} onChange={handleChange}/>
          </div>
          <div className="input-group">
-         <input type="text" name="email" placeholder="Email" value={this.state.email} onChange={this.handleChange}/>
-         <input type="password" name="password" placeholder="Contraseña" value={this.state.password} onChange={this.handleChange}/>
+         <input type="text" name="email" placeholder="Email" value={form.email} onChange={handleChange}/>
+         <input type="password" name="password" placeholder="Contraseña" value={form.password} onChange={handleChange}/>
          </div>
 
          <div className="boton">
-                 <button type="submit" className="submit-btn">REGISTRARSE</button>
+                 <button type="submit" className="submit-btn" onClick={handleClick}>REGISTRARSE</button>
          </div>
      </form>
     </div>
    </div>
   )
- }
 }
 
 export default SignUp
