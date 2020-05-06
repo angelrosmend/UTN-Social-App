@@ -49,14 +49,21 @@ class Friends extends Component {
     render() {
     return (
         <div className="container-friends">
-            <div className="title">
+           <div className="title">
                 <h3>Compañeros</h3>
                 <hr></hr>
+<<<<<<< HEAD
             </div>
             <div className="friends-list">
                 {Object.keys(this.state.friends).map((k,v)=> (<Friend key={this.state.friends[k]} data={this.state.friends[k]}/>))}
                {/* <ul>{friends.map(data => (<Friend key={data.id} data={data}/>))}</ul>*/}
             </div>
+=======
+           </div>
+           <div className="friends-list">
+                <ul>{friends.map(data => (<Friend key={data.id} data={data}/>))}</ul>
+           </div>
+>>>>>>> 12c7898d873104f1923c9d56764a0489f9045157
         </div>
     )
 
