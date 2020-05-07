@@ -1,34 +1,9 @@
-import React,{useState, useEffect, Component} from 'react';
+import React,{Component} from 'react';
 import '../css/main.css'
 import Friend from './Friend';
 import firebase from '../config/firebase'
 
 class Friends extends Component {
-/*useEffect(() => {
-    fetchFriends()
-    .then(
-        (error) => {
-            console.log(error)
-        }
-    )},[]);
-    
-    const [friends, setFriends] = useState([]);
-    const [isLoaded, setIsLoaded] = useState(false)
-    
-    const fetchFriends = async () => {
-    const data = await fetch('https://my-json-server.typicode.com/angelrosmend/utn-friendlist/contacts');
-    
-    const friends = await data.json();
-    console.log(friends);
-    setFriends(friends);
-    setIsLoaded(true)
-    }
-
-    if(!isLoaded){
-        return (
-            <div className="loading">Loading...</div>
-        )
-    }else{    }*/
     constructor(props) {
         super(props)
     
@@ -38,38 +13,38 @@ class Friends extends Component {
         }
     }
     componentDidMount(){
-        firebase.database().ref('contacts/').once('value').then(snapshot=>{
-            console.log(snapshot.val())
+        firebase.db.collection("usuarios")
+        .get()
+        .then(querySnapshot =>{
+            console.log("loaded", querySnapshot.docs);
             this.setState({
-                friends: snapshot.val(),
+                friends: querySnapshot.docs,
                 isLoaded: true
             })
+
         })
     }
     render() {
+    const  loaded = this.state.isLoaded
+     if(!loaded){
+            return <div className="loading">Loading...</div>
+        }else{
+
     return (
         <div className="container-friends">
-           <div className="title">
+            <div className="title">
                 <h3>Compañeros</h3>
                 <hr></hr>
-<<<<<<< HEAD
             </div>
             <div className="friends-list">
-                {Object.keys(this.state.friends).map((k,v)=> (<Friend key={this.state.friends[k]} data={this.state.friends[k]}/>))}
-               {/* <ul>{friends.map(data => (<Friend key={data.id} data={data}/>))}</ul>*/}
+                {this.state.friends.map((doc)=> (<Friend id={doc.id} data={doc.data()}/>))}
             </div>
-=======
-           </div>
-           <div className="friends-list">
-                <ul>{friends.map(data => (<Friend key={data.id} data={data}/>))}</ul>
-           </div>
->>>>>>> 12c7898d873104f1923c9d56764a0489f9045157
         </div>
     )
-
-    }
-
+ }
+ }
 }
+
 
 
 export default Friends

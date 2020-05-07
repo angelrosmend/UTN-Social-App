@@ -1,34 +1,33 @@
 import React,{useState, useEffect} from 'react';
+import firebase from 'firebase'
 import '../css/main.css'
+import avatar from '../img/avatar.png'
 
 
-function ProfileFriend({ match }) {
-    useEffect(() => {
-        fetchFriend();
-        console.log(match);
-       },[]);
+function ProfileFriend(props) {
+    const [friend, setFriend] = useState({})
+
+
+    useEffect(
+        () => {
+        const id = props.match.params.id;
+        firebase.db.doc("usuarios/"+id)
+        .get()
+        .then(doc =>{
+            setFriend( doc.data() )
+            console.log(doc.data())
+        })
+       },[]); 
       
-       const [friend, setFriend] = useState({})
-      
-       const fetchFriend = async () => {
-          const fetchFriend = await fetch(
-         `https://my-json-server.typicode.com/angelrosmend/utn-friendlist/contacts/${
-          match.params.id
-         }`
-        );
-        const friend = await fetchFriend.json();
-        setFriend(friend);
-        console.log(friend);
-       }
-
-
-
+       
  return (
   <div className="container-home">
   <div className="friend-profile">
-      <img src={friend.avatar}/>
-       <h2>{friend.nombre}</h2>
+      <img src={avatar}/>
+       <h2>{friend.nombre}
+          {friend.apellido}</h2>
        <p>{friend.ciudad}</p>
+       <p>Email: {friend.email}</p>
   </div>
   <div className="container-nav-page">
   <div className="container-profile-friend">
@@ -66,8 +65,8 @@ function ProfileFriend({ match }) {
 </div>
 
 </div>
-   </div>
-  </div>
+</div>
+</div>
  )
 }
 

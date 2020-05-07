@@ -29,6 +29,8 @@ function handleSubmit(e) {
              nombre: form.nombre,
              apellido: form.apellido,
              email: form.email,
+             ciudad: form.ciudad,
+             curso: form.curso,
              userId: data.user.uid
          })
          .then((data)=>{
@@ -70,8 +72,12 @@ function handleSubmit(e) {
              <input type="text" name="nombre"   placeholder="Nombre"  value={form.nombre} onChange={handleChange}/>
              <input type="text" name="apellido" placeholder="Apellido" value={form.apellido} onChange={handleChange}/>
          </div>
+         <div className="input-group" > 
+             <input type="text" name="ciudad"   placeholder="Ciudad"  value={form.ciudad} onChange={handleChange}/>
+             <input type="text" name="email" placeholder="Email" value={form.email} onChange={handleChange}/>
+        </div>
          <div className="input-group">
-         <input type="text" name="email" placeholder="Email" value={form.email} onChange={handleChange}/>
+         <input type="text" name="curso" placeholder="Curso" value={form.curso} onChange={handleChange}/>
          <input type="password" name="password" placeholder="Contraseña" value={form.password} onChange={handleChange}/>
          </div>
 
