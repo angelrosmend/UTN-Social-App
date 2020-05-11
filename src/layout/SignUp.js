@@ -16,7 +16,9 @@ function SignUp() {
     nombre: '',
     apellido: '',
     email: '',
-    password: ''
+    password: '',
+    curso: '',
+    ciudad: ''
 })
 
   function handleSubmit(e) {
@@ -40,10 +42,12 @@ function SignUp() {
          })  
          .catch((err)=>{
             console.log(err)
+            alert(err)
         })
     })
     .catch((error) => {
         console.log("Error", error)
+        alert(alert)
     })
     e.preventDefault();
  }
@@ -102,11 +106,15 @@ function SignUp() {
 
         <div className="input-group">
 
-         <input type="text" 
-                name="curso" 
-                placeholder="Curso" 
+        <select name="curso" 
                 value={form.curso} 
-                onChange={handleChange}/>
+                onChange={handleChange}>
+            <option value={null}>Curso</option>       
+            <option value="React">React JS</option>
+            <option value="Angular">Angular JS</option>
+            <option value="Node">Node JS</option>
+            <option value="Full Stack">Full Stack</option>
+        </select>
 
         <input type="password" 
                name="password" 

@@ -132,6 +132,20 @@ input:focus{
  font-weight: bold;
 }
 
+.input-group select{
+ width: 39%;
+ border: 0;
+ padding: 10px;
+ border-radius: 5%;
+ cursor: pointer;
+ margin: 2.5%;
+ background-color: white ;
+}
+.input-group option{
+ background-color: #e41f39;
+ color: white;
+}
+
 .boton button:hover{
  background-color: #ff334e;
 

@@ -10,6 +10,9 @@ class LogIn extends Component {
         email:'',
         password:''
         }
+
+        this.inputRef = React.createRef()
+
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
     }
@@ -43,6 +46,12 @@ class LogIn extends Component {
         e.preventDefault(); 
     }
 
+    componentDidMount() {
+        this.inputRef.current.focus()
+        console.log(this.inputRef)
+    }
+
+
 
  render() {
   return (
@@ -58,6 +67,7 @@ class LogIn extends Component {
              type="text" 
              name="usuario" 
              placeholder="Usuario" 
+             ref={this.inputRef}
              value={this.state.usuario} 
              onChange={this.handleChange}/>
 
