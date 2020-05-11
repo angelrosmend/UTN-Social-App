@@ -2,19 +2,16 @@ import React, { Component } from 'react'
 import firebase from '../config/firebase'
 import { withRouter } from 'react-router-dom';
 import '../css/Inicio.css'
-import { Link, } from 'react-router-dom';
 
 class LogIn extends Component {
     constructor(props) {
         super(props);
-
-        this.handleSubmit = this.handleSubmit.bind(this)
-        this.handleChange = this.handleChange.bind(this)
-        /*this.handleClick = this.handleClick.bind(this)*/
         this.state = {
         email:'',
         password:''
         }
+        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleChange = this.handleChange.bind(this)
     }
    
     handleSubmit(e) {
@@ -72,15 +69,13 @@ class LogIn extends Component {
              onChange={this.handleChange}/>
          </div>
          <div className="boton">
-                 <button 
-                 type="submit" 
-                 className="submit-btn">
-                    {/* <Link className="link" to="/home/user/profile">INGRESAR</Link>*/}
-                    ACCEDER
-                 </button>
+            <button 
+            type="submit" 
+            className="submit-btn">
+            ACCEDER
+            </button>
          </div>
      </form>
-
      </div>
  </div>
   )

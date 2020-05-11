@@ -17,8 +17,7 @@ function Home() {
         <Route path="/inicio" component={SignUp}/>
         <Route component={Footer}/>
     </div>
-
-        )
+     )
     }
 
 export default Home

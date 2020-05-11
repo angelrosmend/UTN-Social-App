@@ -5,6 +5,7 @@ import firebase from '../config/firebase'
 
 
 function SignUp() {
+
   const history = useHistory();
 
   function handleClick(){
@@ -18,7 +19,7 @@ function SignUp() {
     password: ''
 })
 
-function handleSubmit(e) {
+  function handleSubmit(e) {
 
      let email = form.email;
      let password = form.password;
@@ -48,6 +49,7 @@ function handleSubmit(e) {
  }
 
  function handleChange(e){
+
      const target = e.target;
      const value = target.value;
      const name = target.name;
@@ -66,27 +68,64 @@ function handleSubmit(e) {
          <h2>Registro</h2>
          <hr />
      </div>
-     <div className="form">
+    <div className="form">
      <form onSubmit={handleSubmit}>
          <div className="input-group" > 
-             <input type="text" name="nombre"   placeholder="Nombre"  value={form.nombre} onChange={handleChange}/>
-             <input type="text" name="apellido" placeholder="Apellido" value={form.apellido} onChange={handleChange}/>
-         </div>
-         <div className="input-group" > 
-             <input type="text" name="ciudad"   placeholder="Ciudad"  value={form.ciudad} onChange={handleChange}/>
-             <input type="text" name="email" placeholder="Email" value={form.email} onChange={handleChange}/>
+
+         <input  type="text" 
+                 name="nombre"   
+                 placeholder="Nombre"  
+                 value={form.nombre} 
+                 onChange={handleChange}/>
+
+         <input  type="text" 
+                 name="apellido" 
+                 placeholder="Apellido" 
+                 value={form.apellido} 
+                 onChange={handleChange}/>
         </div>
-         <div className="input-group">
-         <input type="text" name="curso" placeholder="Curso" value={form.curso} onChange={handleChange}/>
-         <input type="password" name="password" placeholder="Contraseña" value={form.password} onChange={handleChange}/>
+
+        <div className="input-group" > 
+
+          <input type="text" 
+                 name="ciudad"   
+                 placeholder="Ciudad"  
+                 value={form.ciudad} 
+                 onChange={handleChange}/>
+
+          <input type="text" 
+                 name="email" 
+                 placeholder="Email" 
+                 value={form.email} 
+                 onChange={handleChange}/>
+        </div>
+
+        <div className="input-group">
+
+         <input type="text" 
+                name="curso" 
+                placeholder="Curso" 
+                value={form.curso} 
+                onChange={handleChange}/>
+
+        <input type="password" 
+               name="password" 
+               placeholder="Contraseña" 
+               value={form.password} 
+               onChange={handleChange}/>
          </div>
 
          <div className="boton">
-                 <button type="submit" className="submit-btn" onClick={handleClick}>REGISTRARSE</button>
+            <button type="submit"
+                    className="submit-btn" 
+                    onClick={handleClick}>
+                        REGISTRARSE
+            </button>
+            
          </div>
-     </form>
-    </div>
-   </div>
+        </form>
+       </div>
+      </div>
   )
 }
 

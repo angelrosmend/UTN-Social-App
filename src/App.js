@@ -7,10 +7,11 @@ import {Route, Redirect,} from 'react-router-dom';
 class App extends Component{
 
   constructor(props) {
+
     super(props)
-  
+
     this.state = {
-       
+   
     }
   }
   
@@ -18,10 +19,10 @@ class App extends Component{
   render(){
   return (
     <div className="App">
-     <Route path="/inicio" component={Inicio}/>
-     <Route path="/home" component={Home}/>
-     <Redirect from={'/'} to={'/inicio/signup'} />
-     </div>
+      <Route path="/inicio" component={Inicio}/>
+      <Route path="/home" component={Home}/>
+      <Redirect from={'/'} to={'/inicio/signup'} />
+    </div>
   );
   }
 }
