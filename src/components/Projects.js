@@ -9,7 +9,6 @@ function Projects() {
     <div className="modulo-1">
     <h6>Modulo 1</h6>
    <div className="md-1">
-
     <a 
         href="/"
         rel="noopener noreferrer"
