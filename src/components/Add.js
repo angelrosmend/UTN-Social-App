@@ -17,7 +17,6 @@ class Add extends Component {
     
     handleClick(e) {
         this.setState({ added: !this.state.added});
-
     }
 
     render() {
