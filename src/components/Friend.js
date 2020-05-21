@@ -4,7 +4,6 @@ import Add from './Add'
 import '../css/main.css'
 import avatar from '../img/avatar.png'
 
-
 function Friend({data, id}) {
     return (
      <li className="friend">
