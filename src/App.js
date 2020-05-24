@@ -19,9 +19,9 @@ class App extends Component{
   render(){
   return (
     <div className="App">
-      <Route path="/inicio" component={Inicio}/>
-      <Route path="/home" component={Home}/>
-      <Redirect from={'/'} to={'/inicio/signup'} />
+        <Route path="/inicio" component={Inicio}/>
+        <Route path="/home" component={Home}/>
+        <Redirect from={'/'} to={'/inicio/signup'} />
     </div>
   );
   }
