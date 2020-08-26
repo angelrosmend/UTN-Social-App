@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import firebase from '../config/firebase'
 import { withRouter } from 'react-router-dom';
+
 import '../css/Inicio.css'
 
 class LogIn extends Component {
