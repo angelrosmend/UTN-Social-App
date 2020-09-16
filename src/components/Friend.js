@@ -14,6 +14,7 @@ function Friend({data, id}) {
         <Link className="link-friend-profile" to={`/home/friend/`+id}>
             <h5>{data.nombre} {data.apellido}</h5>
             </Link>
+        
             <p>{data.ciudad}</p>
         </div>
         <Add />
